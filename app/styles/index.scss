@@ -1,1 +1,112 @@
 @import '~bootstrap/scss/bootstrap';
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+$font-family: 'Playfair Display', serif;
+$body-bg-color: lightseagreen;
+$box-bg-color: lightgrey;
+$box-border-color: red;
+$alt-bg-color: cyan;
+
+
+
+body {
+  margin:0;
+  background-color: $body-bg-color;
+}
+
+
+
+
+
+.box {
+  align-items: center;
+  background-color: $box-bg-color;
+  border: 1px solid $box-border-color;
+  color: $box-border-color;
+  display: flex;
+  font-family: $font-family;
+  height: 140px;
+  justify-content: center;
+  max-width:800px;
+  
+
+  // grid-template-columns: repeat(3,auto);
+}
+.container{
+   max-width:800px;
+}
+h1, h2 {
+    margin:60px;
+  font-family: $font-family;
+  text-align: center;
+  color:white
+
+}
+
+.alt-color {
+  background-color: $alt-bg-color;
+}
+
+form { margin-top:50px;}
+
+
+#begin-game{
+  width: 200px;
+	background-color: #645a7e;
+	border-radius: 8px;
+ color: #fff;}
+
+ .board:hover{
+   cursor:pointer;
+ }
+
+
+ #begin-game{
+   margin: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #645a7e;
+
+
+ }
+
+ .signup1{
+   background-color: #645a7e;
+   width:100px ;
+   height:25px;
+   color:white;
+ }
+
+ .sign_out{
+   margin: 30px;
+   display: inline-block;
+   align-items: center;
+   background-color: #645a7e;
+   width:120px ;
+   height:25px;
+   color:white;
+
+
+
+ }
+
+
+.signup{
+    background-color: #645a7e;
+    width:120px ;
+   height:25px;
+   color:white;
+ }
+
+.passchan{
+   background-color: #645a7e;
+   width:120px ;
+   height:25px;
+   color:white;
+}
