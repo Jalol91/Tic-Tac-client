@@ -58,16 +58,22 @@ const onSignOut=(event)=> {
   let currentTurn =1
 
 
-  const boxClick =function(){
+  const boxClick =function(event){
       console.log('click')
+      console.log(event)
+      console.log($(this).text())
+      if ($(this).text()=='x'||$(this).text()=='o') return
       
       if (currentTurn %2===1){
          $(this).text('x')
       }else{
           $(this).text('o')
       }
-       currentTurn++
+       currentTurn++  
+      
+      
   }
+
 
 
 
