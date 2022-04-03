@@ -28,7 +28,7 @@ const store = require("../store")
    return $.ajax({
         method:'DELETE',
         url:'https://tic-tac-toe-api-development.herokuapp.com/sign-out',
-        data 
+        headers:{Authorization:'Bearer ' +store.user.token }
 
     })
 }
@@ -41,17 +41,38 @@ const store = require("../store")
 
 
       })
+
+      
         
     }
 
+      const  update = function(index,value,over){
+      return $.ajax({
+          method:'PATCH',
+        url:'https://tic-tac-toe-api-development.herokuapp.com/games/'+store.game._id,
+        headers:{Authorization:'Bearer ' +store.user.token },
+        data:{
+  "game": {
+    "cell": {
+      "index": index,
+      "value": value
+    },
+    "over": over
+  }
+}
 
+
+
+      })
+    }
 
 
     module.exports ={
         onIndexSignUp,
         onIndexSignIn,
         onIndexSignOut,
-        createGame
+        createGame,
+        update 
 
 
     }

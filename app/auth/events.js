@@ -18,7 +18,7 @@ const onSignUp=(event)=> {
  
 
         .then((response) => SignUpUi.onIndexSignUpSuccess(response))
-        .catch(() => SignUpUi.onIndexSignUpFailure(response))
+        .catch(() => SignUpUi.onIndexSignUpFailure())
   
   }
 
@@ -35,11 +35,25 @@ const onSignUp=(event)=> {
        .then((response) => SignUpUi.onIndexSignInSuccess(response))
        .then(()=>SignUpApi.createGame())
        .then((response)=>console.log(response))
-        .catch(() => SignUpUi.onIndexSignInFailure(response))
+        .catch(() => SignUpUi.onIndexSignInFailure())
   
 
     
   }
+
+
+
+const onSignOut=(event)=> {
+     
+    
+    SignUpApi.onIndexSignOut()
+ 
+
+        .then((response) => SignUpUi.onIndexSignOutSuccess(response))
+        .catch(() => SignOutUi.onIndexSignOutFailure())
+  
+  }
+  
 
   let currentTurn =1
 
@@ -56,24 +70,35 @@ const onSignUp=(event)=> {
   }
 
 
-  
-  
-
- 
-//   const player1='X'
-//   const player2 ='O'
-
-//   const gameOver= false 
-//   let currentPlayer =player1
-//   const gameBoard =['','','','','','','','']
 
 
+  const game ={
+    Turn:true,
+    State:[],
+
+    WinningStates:[
 
 
-  module.exports={
-      onSignUp ,
-      onSignIn ,
-      boxClick
+        ['0', '1', '2'],
+        ['3', '4', '5'],
+        ['6', '7', '8'],
+
+        // Columns
+        ['0', '3', '6'],
+        ['1', '4', '7'],
+        ['2', '5', '8'],
+
+        // Diagonal
+        ['0', '4', '8'],
+        ['2', '4', '6']
+    ]
+}
 
 
-  }
+module.exports={
+  onSignUp,
+  onSignIn,
+  onSignOut,
+  boxClick
+
+}

@@ -9,7 +9,7 @@ const onIndexSignUpSuccess = function (response){
 }
 
 const onIndexSignUpFailure = function (){
-    $('#error-message').text('There was an error')
+    $('#error').text('Sign Up Failure')
 
 }
 
@@ -25,15 +25,25 @@ store.user=response.user
 }
 
 const onIndexSignInFailure = function (response){
-    $('#error-message').text('There was an error')
+    $('#error').text('Signed In Failure')
 
 }
 
+const onIndexSignOutSuccess =function(response){
+    $('#error').text(' Sign Out Succsess ')
+}
+
+const onIndexSignOutFailure =function(response){
+    $('#error').text(' Sign Out Succsess ')
+    // make game stop 
+}
 module.exports={
     onIndexSignUpSuccess,
      onIndexSignUpFailure,
    onIndexSignInSuccess ,
-      onIndexSignInFailure 
+      onIndexSignInFailure ,
+      onIndexSignOutSuccess,
+      onIndexSignOutFailure
 
 
 
