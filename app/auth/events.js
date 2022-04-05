@@ -3,7 +3,7 @@ const getFormFields = require('../../lib/get-form-fields.js')
 
 const SignUpApi= require('./api.js')
 const SignUpUi= require ('./ui.js')
-
+const store= require('../store.js')
 
 
 const onSignUp=(event)=> {
@@ -34,7 +34,7 @@ const onSignUp=(event)=> {
 
        .then((response) => SignUpUi.onIndexSignInSuccess(response))
        .then(()=>SignUpApi.createGame())
-       .then((response)=>console.log(response))
+       .then((response)=>store.game=response.game)
         .catch(() => SignUpUi.onIndexSignInFailure())
   
 
@@ -57,6 +57,8 @@ const onSignOut=(event)=> {
 
   let currentTurn =1
 
+      let gameOver=false 
+
 
   const boxClick =function(event){
       console.log('click')
@@ -70,9 +72,29 @@ const onSignOut=(event)=> {
           $(this).text('o')
       }
        currentTurn++  
+
+       const index = event.target.getAttribute('data-cellindex')
+       console.log(index)
+
+       const updateValue= $(this).text()
+       console.log(updateValue)
+
+
+        SignUpApi.update(index,updateValue,gameOver)
+ 
+
+        .then((response) => console.log(response))
+        .catch((response) => console.log(response))
+
       
       
   }
+
+
+
+  
+  
+
 
 
 
