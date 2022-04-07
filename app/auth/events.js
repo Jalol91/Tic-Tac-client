@@ -54,6 +54,7 @@ const onSignOut=(event)=> {
   
   }
   
+  let moves =0
 
   let currentTurn =1
 
@@ -61,20 +62,25 @@ const onSignOut=(event)=> {
 
 
   const boxClick =function(event){
+
       console.log('click')
-      console.log(event)
-      console.log($(this).text())
+      // console.log(event)
+      // console.log($(this).text())
       if ($(this).text()=='x'||$(this).text()=='o') return
-      
+      moves++
       if (currentTurn %2===1){
          $(this).text('x')
       }else{
           $(this).text('o')
       }
        currentTurn++  
+      
+      
 
        const index = event.target.getAttribute('data-cellindex')
-       console.log(index)
+      //  console.log(index)
+      store.game.cells[index]=$(this).text()
+        winStatus($(this).text())
 
        const updateValue= $(this).text()
        console.log(updateValue)
@@ -91,9 +97,59 @@ const onSignOut=(event)=> {
   }
 
 
+  const winStatus=function(letter){
+    const arr = store.game.cells
+    console.log(arr)
+    if(arr[0]=== letter&& arr[1]===letter&& arr[2]===letter){
+      gameOver=true
+      $('#display').text('Hey You Won')
+    }
+    
+     else if  (arr[3]===letter&& arr[4]===letter&& arr[5]==letter){
+       gameOver=true
+       $('#display').text('Hey You Won')
 
-  
-  
+     }
+      
+     else if (arr[6]===letter&& arr[7]===letter&& arr[8]===letter){
+       gameOver=true
+       $('#display').text('Hey You Won')
+
+     } else if (arr[0]===letter&& arr[3]===letter&& arr[6]===letter){
+       gameOver=true
+       $('#display').text('Hey You Won')
+    
+
+      } else if (arr[1]===letter&& arr[4]===letter&& arr[7]===letter){
+        gameOver=true
+        $('#display').text('Hey You Won')
+
+      }else if (arr[2]===letter&& arr[5]===letter&& arr[8]===letter){
+       gameOver=true
+       $('#display').text('Hey You Won')
+
+        }else if (arr[0]===letter&& arr[4]===letter&& arr[8]===letter){
+
+        gameOver=true
+        $('#display').text('Hey You Won')
+     }
+      else if (arr[2]===letter&& arr[4]===letter&& arr[6]===letter){
+     gameOver=true
+        $('#display').text('Hey You Won')
+     
+}
+      else if (moves ===9){
+        gameOver=true
+        $('#display').text('TIE')
+      }
+      console.log(gameOver)
+}
+// how to check if there is a tie 
+
+// how to show who won 
+
+
+
 
 
 
