@@ -35,6 +35,7 @@ const onSignUp=(event)=> {
        .then((response) => SignUpUi.onIndexSignInSuccess(response))
        .then(()=>SignUpApi.createGame())
        .then((response)=>store.game=response.game)
+       .then(()=>  $('.box').on('click',boxClick))
         .catch(() => SignUpUi.onIndexSignInFailure())
   
 
@@ -103,44 +104,55 @@ const onSignOut=(event)=> {
     if(arr[0]=== letter&& arr[1]===letter&& arr[2]===letter){
       gameOver=true
       $('#display').text('Hey You Won')
+    $('.box').off('click',boxClick)
+
+      
     }
     
      else if  (arr[3]===letter&& arr[4]===letter&& arr[5]==letter){
        gameOver=true
        $('#display').text('Hey You Won')
+       $('.box').off('click',boxClick)
 
      }
       
      else if (arr[6]===letter&& arr[7]===letter&& arr[8]===letter){
        gameOver=true
        $('#display').text('Hey You Won')
+       $('.box').off('click',boxClick)
 
      } else if (arr[0]===letter&& arr[3]===letter&& arr[6]===letter){
        gameOver=true
        $('#display').text('Hey You Won')
+       $('.box').off('click',boxClick)
     
 
       } else if (arr[1]===letter&& arr[4]===letter&& arr[7]===letter){
         gameOver=true
         $('#display').text('Hey You Won')
+        $('.box').off('click',boxClick)
 
       }else if (arr[2]===letter&& arr[5]===letter&& arr[8]===letter){
        gameOver=true
        $('#display').text('Hey You Won')
+       $('.box').off('click',boxClick)
 
         }else if (arr[0]===letter&& arr[4]===letter&& arr[8]===letter){
 
         gameOver=true
         $('#display').text('Hey You Won')
+        $('.box').off('click',boxClick)
      }
       else if (arr[2]===letter&& arr[4]===letter&& arr[6]===letter){
      gameOver=true
         $('#display').text('Hey You Won')
+        $('.box').off('click',boxClick)
      
 }
       else if (moves ===9){
         gameOver=true
         $('#display').text('TIE')
+        $('.box').off('click',boxClick)
       }
       console.log(gameOver)
 }
