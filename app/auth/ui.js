@@ -1,5 +1,5 @@
 const store= require('../store.js')
-const Events = require('./events.js')
+
 
 const onIndexSignUpSuccess = function (response){
 
@@ -24,7 +24,7 @@ const onIndexSignInSuccess = function (response){
     //     .catch(() => console.log(response ))
      
 store.user=response.user
-   $('.box').on('click',Events.boxClick)
+   
 //  Testining boxclick
 }
 
