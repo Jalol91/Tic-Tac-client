@@ -11,8 +11,9 @@ $(() => {
 
   $('#sign_up').on('submit',Events.onSignUp)
   $('#sign_in').on('submit', Events.onSignIn)
-    $('.box').on('click',Events.boxClick)
+    // $('.box').on('click',Events.boxClick)
     $('.sign_out').on('click',Events.onSignOut)
+
 
 
 })
