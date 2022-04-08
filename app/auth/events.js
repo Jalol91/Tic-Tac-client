@@ -39,7 +39,11 @@ const onSignUp=(event)=> {
        .then(()=>SignUpApi.createGame())
        .then((response)=>store.game=response.game)
        .then(()=>  $('.box').on('click',boxClick))
+       .then(()=> $('#display_2').show())
+       .then(()=> $('#display_1').hide())
         .catch(() => SignUpUi.onIndexSignInFailure())
+
+
   
 
     
@@ -54,6 +58,8 @@ const onSignOut=(event)=> {
  
 
         .then((response) => SignUpUi.onIndexSignOutSuccess(response))
+        .then(()=> $('#display_1').show())
+       .then(()=> $('#display_2').hide())
         .catch(() => SignOutUi.onIndexSignOutFailure())
   
   }

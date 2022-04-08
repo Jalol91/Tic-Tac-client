@@ -14,6 +14,8 @@ $(() => {
     // $('.box').on('click',Events.boxClick)
     $('.sign_out').on('click',Events.onSignOut)
     $('#begin-game').on('click',Events.newGame)
+    $('#display_2').hide()
+
 
 
 
