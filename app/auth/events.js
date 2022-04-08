@@ -14,6 +14,8 @@ const onSignUp=(event)=> {
 
     console.log(event.target)
     const data= getFormFields(form)
+    $('form').trigger('reset')
+
     SignUpApi.onIndexSignUp(data)
  
 
@@ -28,6 +30,7 @@ const onSignUp=(event)=> {
       const form =event.target
       console.log(event.target)
       const data= getFormFields(form)
+      $('form').trigger('reset')
        SignUpApi.onIndexSignIn(data)
       
 

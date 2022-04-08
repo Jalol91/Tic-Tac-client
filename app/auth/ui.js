@@ -2,6 +2,7 @@ const store= require('../store.js')
 
 
 const onIndexSignUpSuccess = function (response){
+    $('#error').text('Sign Up Success')
 
   
    console.log(response)
@@ -16,6 +17,7 @@ const onIndexSignUpFailure = function (){
 
 
 const onIndexSignInSuccess = function (response){
+    $('#error').text('Sign In Success')
 
    
       console.log(response)
@@ -38,7 +40,7 @@ const onIndexSignOutSuccess =function(response){
 }
 
 const onIndexSignOutFailure =function(response){
-    $('#error').text(' Sign Out Succsess ')
+    $('#error').text(' Sign Out Failure ')
     // make game stop 
 }
 module.exports={
