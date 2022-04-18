@@ -1,5 +1,7 @@
-[
 
+[Check out demo here :](https://jalol91.github.io/Tic-Tac-client/)
+
+Description and Rules of the Tic Tac Toe game
  Two Player Game  (Player1,Player2)
 
 * Player1  starts the game
@@ -21,3 +23,13 @@
  Then the game is over
  When playing game, Player must be notified of win or tie
  Once a game is over, user must be able to play again
+
+ Technologies Used
+
+jQuery
+HTML/CSS
+Bootstrap
+Javascript
+
+
+![ wireframe](images/wireframe.jpg)
