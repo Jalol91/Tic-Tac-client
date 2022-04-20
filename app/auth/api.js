@@ -49,7 +49,7 @@ const store = require("../store")
       const  update = function(index,value,over){
       return $.ajax({
           method:'PATCH',
-        url:'https://tic-tac-toe-api-production.herokuapp.com/'+store.game._id,
+        url:'https://tic-tac-toe-api-production.herokuapp.com/games/'+store.game._id,
         headers:{Authorization:'Bearer ' +store.user.token },
         data:{
   "game": {
@@ -75,6 +75,5 @@ const store = require("../store")
         onIndexSignOut,
         createGame,
         update 
-
 
     }
