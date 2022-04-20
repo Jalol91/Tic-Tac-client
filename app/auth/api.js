@@ -49,7 +49,7 @@ const store = require("../store")
       const  update = function(index,value,over){
       return $.ajax({
           method:'PATCH',
-        url:'https://tic-tac-toe-api-production.herokuapp.com/'+store.game._id,
+        url:'https://tic-tac-toe-api-production.herokuapp.com/update'+store.game._id,
         headers:{Authorization:'Bearer ' +store.user.token },
         data:{
   "game": {
