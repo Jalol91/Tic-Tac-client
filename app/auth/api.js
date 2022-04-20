@@ -76,9 +76,4 @@ const store = require("../store")
         createGame,
         update 
 
-<<<<<<< HEAD
     }
-=======
-
-    }
->>>>>>> 2f81c64a15a08036b116522816d7f36b10fb1ec7
